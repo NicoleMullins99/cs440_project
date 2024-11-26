@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cced6aeb08dce03488020c19ca8f8318, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  SpawnPoint: 8
+  Tasks:
+  - TaskTarget: 4
+    DisplayText: Gemma to Banditos Cafe
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 7
+    DisplayText: Banditos to Traders Pop
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 3
+    DisplayText: Traders Pop to RINO Corp
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 6
+    DisplayText: RINO Corp to Cafe Zondag
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 1
+    DisplayText: Cafe Zondag to Luke's Tavern
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 5
+    DisplayText: Luke's Tavern to Joeys!
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 2
+    DisplayText: Joeys! to QBIT Bank
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 6
+    DisplayText: QBit Bank to Cafe Zondag
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 8
+    DisplayText: Cafe Zondag to Gemma
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 5
+    DisplayText: Gemma to Joeys!
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 1
+    DisplayText: Joeys! to Luke's Tavern
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}
+  - TaskTarget: 4
+    DisplayText: Luke's Tavern to Banditos Cafe
+    ControlState: 0
+    TaskTargetSettings: {fileID: 11400000, guid: 8b9b9f8174098264291ded5f71cf40e0,
+      type: 2}

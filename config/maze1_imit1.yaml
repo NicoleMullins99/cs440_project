@@ -1,0 +1,65 @@
+behaviors:
+  Main1:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 0.0001
+      beta: 0.01
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+      beta_schedule: linear
+      epsilon_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+      gail:
+        strength: 0.25
+        demo_path: "ImitationDemos/Main Maze.demo"
+      curiosity:
+        strength: 0.05
+        gamma: 0.99
+        network_settings:
+          hidden_units: 256
+        learning_rate: 1.0e-5
+    behavioral_cloning:
+        strength: 0.5
+        demo_path: "ImitationDemos/Main Maze.demo"
+        steps: 1000000
+    max_steps: 10000000
+    time_horizon: 64
+    summary_freq: 5000
+environment_parameters:
+  maze1:
+    curriculum:
+      - name: "Lesson 1" # This is the start of the second lesson
+        completion_criteria:
+          measure: reward
+          behavior: Main1
+          signal_smoothing: true
+          min_lesson_length: 1000
+          threshold: 90
+        value: 0
+      - name: "Lesson 2"
+        completion_criteria:
+          measure: reward
+          behavior: Main1
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 90
+        value: 1
+      - name: "Lesson 3"
+        completion_criteria:
+          measure: reward
+          behavior: Main1
+          signal_smoothing: true
+          min_lesson_length: 100
+          threshold: 75
+        value: 2

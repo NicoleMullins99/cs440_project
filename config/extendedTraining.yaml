@@ -1,0 +1,81 @@
+behaviors:
+  Main1:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 2000
+      buffer_size: 20000
+      learning_rate: 0.001
+      beta: 0.004
+      epsilon: 0.2
+      lambd: 0.97
+      num_epoch: 3
+      learning_rate_schedule: linear
+      beta_schedule: linear
+      epsilon_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 512
+      num_layers: 3
+    reward_signals:
+      extrinsic:
+        gamma: 0.95
+        strength: 0.99
+      gail:
+        strength: 0.05
+        gamma: 0.95
+        learning_rate: 0.00075
+        demo_path: "ImitationDemos/MultiSensor"
+      curiosity:
+        strength: 0.005
+        gamma: 0.95
+        network_settings:
+          hidden_units: 256
+          normalize: true
+        learning_rate: 0.00075
+    # behavioral_cloning:
+    #   strength: 0.4
+    #   demo_path: "ImitationDemos/MultiSensor
+    #   steps: 2000000
+    # memory:
+    #   sequence_length: 64
+    #   memory_size: 128
+    keep_checkpoints: 15
+    max_steps: 20000000
+    time_horizon: 1000
+    summary_freq: 25000
+    threaded: false
+environment_parameters:
+  maze1:
+    curriculum:
+      - name: "Lesson 0: Averaged 0.5 over 1000 episodes"
+        completion_criteria:
+          measure: reward
+          behavior: Main1
+          signal_smoothing: true
+          min_lesson_length: 1000
+          threshold: 0.5
+        value: 0
+      - name: "Lesson 1: Averaged 0.75 over 1000 episodes"
+        completion_criteria:
+          measure: reward
+          behavior: Main1
+          signal_smoothing: true
+          min_lesson_length: 1000
+          threshold: 0.75
+        value: 0
+      - name: "Lesson 2: Averaged 0.85 over 1000 episodes"
+        completion_criteria:
+          measure: reward
+          behavior: Main1
+          signal_smoothing: true
+          min_lesson_length: 1000
+          threshold: 0.85
+        value: 0
+      - name: "Lesson 3: Averaged 0.9 over 1000 episodes"
+        completion_criteria:
+          measure: reward
+          behavior: Main1
+          signal_smoothing: true
+          min_lesson_length: 1000
+          threshold: 0.9
+        value: 0

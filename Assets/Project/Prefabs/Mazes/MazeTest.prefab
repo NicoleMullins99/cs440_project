@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5336277440661288163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8946394251314474503}
+  - component: {fileID: 534822088437489025}
+  m_Layer: 0
+  m_Name: MazeTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8946394251314474503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336277440661288163}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 95, y: 0, z: -355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534822088437489025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336277440661288163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e98c4f235a1c8847a5d1f1cd9cb78ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rewards: {fileID: 11400000, guid: ccda73c36f30b8a4e856730c13015665, type: 2}
+  _previewCameraPosition: {x: -15, y: 200, z: 0}
+  _previewCameraRotation: {x: 90, y: 0, z: 0}
+  _agentTrainingSteps: 0
+  _tileStayTimer: 5
+  _minMazeExploreTarget: 0.75
+  _maxIterations: 8
+  _stepPunishmentRatio: 0
+  _agentSpawnPoints: []
+  _targetSpawnPoints: []
+  _mazeExit: {fileID: 0}
+  _environmentHolder: {fileID: 0}
+  _randomiseExitSpawns: 1
+  _roadLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _roadTiles: []
+  _collisionEnterPunishmentLevel: 1
+  _collisionStayPunishmentLevel: 2
